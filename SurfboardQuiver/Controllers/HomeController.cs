@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SurfboardQuiver.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,16 @@ namespace SurfboardQuiver.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Surfboard
+        //private Repository _surfboardRepository = null;
+
+        //public surfboardcontroller()
+        //{
+        //    _surfboardrepository = new repository();
+        //}
+        
         public ActionResult Index()
         {
+
             return View();
         }
 

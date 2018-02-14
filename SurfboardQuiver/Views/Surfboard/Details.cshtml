@@ -3,17 +3,17 @@
 @{
     ViewBag.Title = "Surfboard Details";
     Layout = "~/Views/Shared/_SurfboardLayout.cshtml";
-
-
 }
-<div class="row">
-    <div class="col-md-4">
-        <h2>Details: @ViewBag.DisplayText</h2>
-        <h4>Board shape: @ViewBag.Style</h4>
-        <h4>Fin: @ViewBag.Fins</h4>
-        <p>@ViewBag.Notes</p>
+
+<div class="card">
+    <div class=".card-body col-md-6">
+        <h2>Details: @Model.DisplayText</h2>
+        <h4>Board shape: @Model.Shape</h4>
+        <h4>Fin: @Model.FinSetup</h4>
+        <p>@Model.Description</p>
     </div>
-    <div class="col-md-4">
-        <img src="@ViewBag.Image" />
+
+    <div class="col-md-6">
+        <img src="~/images/@Model.ImageFileName" alt="@Model.DisplayText" class ="img-responsive" />
     </div>
 </div>

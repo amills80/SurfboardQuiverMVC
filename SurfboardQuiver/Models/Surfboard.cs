@@ -15,6 +15,22 @@ namespace SurfboardQuiver.Models
         public float Length { get; set; }
         public float Width { get; set; }
         public string Description { get; set; }
-        public int Rating { get; set; }
+        public float Rating { get; set; }
+
+        public string DisplayText
+        {
+            get
+            {
+                return Make.Name.ToString() + " : " + Model + " : " + Length;
+            }
+        }
+
+        public string ImageFileName
+        {
+            get
+            {
+                return (Make.Name + '_' + Model.Replace(' ', '-') + ".jpg").ToLower();
+            }
+        }
     }
 }
