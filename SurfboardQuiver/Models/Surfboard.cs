@@ -29,7 +29,7 @@ namespace SurfboardQuiver.Models
         {
             get
             {
-                return (Make.Name + '_' + Model.Replace(' ', '-') + ".jpg").ToLower();
+                return (Make.Name.Replace(' ', '-').ToLower() + '_' + Model.Replace(' ', '-') + ".jpg").ToLower();
             }
         }
     }

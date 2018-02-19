@@ -1,18 +1,18 @@
 ﻿@model SurfboardQuiver.Models.Surfboard
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "The NE Florida Surfboard Database";
     Layout = "~/Views/Shared/_SurfboardLayout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>@*Index*@</h2>
 
-@*@//foreach(var surfboard in Surfboards)*@
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>@ViewBag.Title</h1>
+    <p class="lead">This site is a generalized page, promoting surfboard shapers of North East Florida</p>
+    <p><a href="~/Surfboard/" class="btn btn-primary btn-lg">Enter the board room &raquo;</a></p>
+    @*<p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more about how this site was built &raquo;</a></p>*@
 </div>
 
 <div class="row">

@@ -15,14 +15,14 @@ namespace SurfboardQuiver.Data
                 Id = 1,
                 Make = new Builder()
                 {
-                    Name = "McTavish"
+                    Name = "Las Olas"
                 },
-                Model = "Sumo",
-                Length = 7.8f,
-                Width = 22f,
-                Shape = "MiniMal",
+                Model = "Plover",
+                Length = 7.1f,
+                Width = 22.4f,
+                Shape = "MidLength",
                 FinSetup = "2+1",
-                Description = "Sporty, fun ride. Works best in clean-face waves.",
+                Description = "The Plover is a mid length hull designed for small, fun, summer waves.  This board has a fully rolled bottom contour which transitions to a paneled vee out of the tail.  This board is designed to turn and trim in waves from knee to head high and excels in clean, point surf.",
                 Rating = 4f,
             },
             new Surfboard()

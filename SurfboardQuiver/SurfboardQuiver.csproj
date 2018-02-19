@@ -160,8 +160,11 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\ghetto_fuggly-model.jpg" />
+    <Content Include="images\las-olas_plover.jpg" />
     <Content Include="images\mayo_twin-keel.jpg" />
-    <Content Include="images\mctavish_sumo.jpg" />
+    <Content Include="images\quiver.jpg" />
+    <Content Include="images\quiver2.jpg" />
+    <Content Include="images\quiver3.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
