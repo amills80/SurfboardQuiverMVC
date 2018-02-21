@@ -144,7 +144,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SurfboardController.cs" />
-    <Compile Include="Data\Repository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -159,7 +158,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\clay-bennett_banshee-model.jpg" />
+    <Content Include="images\default_details_surfboard.jpg" />
     <Content Include="images\ghetto_fuggly-model.jpg" />
+    <Content Include="images\las-olas_knows-boogie.jpg" />
     <Content Include="images\las-olas_plover.jpg" />
     <Content Include="images\mayo_twin-keel.jpg" />
     <Content Include="images\quiver.jpg" />
@@ -170,6 +172,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Compile Include="Data\Repository.cs" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

@@ -65,6 +65,24 @@ namespace SurfboardQuiver.Data
                 Rating = 4.1f,
                 ImageFileName = "mayo_twin-keel.jpg",
             },
+            new Surfboard()
+            {
+                Id = 4,
+                Make = new Builder()
+                {
+                    Id = 4,
+                    Name = "Clay Bennett"
+                },
+                Model = "Banshee Model",
+                Length = 9.5f,
+                Width = 23,
+                Shape = "Longboard",
+                FinSetup = "2+1",
+				Description = "Great all around longboard for beach break conditions. Has a modest nose and tail rocker to fit into some steeper waves while still having great turning and noseriding ability. Has a center channel in the center portion of the board to provide a little extra release and allow the board to get more vertical.",
+                //Description = "The Knows Boogie is a modern take on a traditional log.  It has a slight step deck with a concave under the nose and a subtly kicked rocker in the tail.  The 50/50 rails help this board turn and trim in any type of surf. The knows boogie is a great all around nose rider for a wide verity of surf and is designed for beginner to advanced surfers in knee to shoulder high surf.",
+                Rating = 4.4f,
+                ImageFileName = "clay-bennett_banshee-model.jpg",
+            }
         };
 
 
@@ -96,7 +114,7 @@ namespace SurfboardQuiver.Data
             /// if not... 
             /// ... use nextAvailableId to create builderId
             newBoard.Make.Id = _surfboards.Max(s => s.Make.Id) + 1;
-            
+
             newBoard.Id = nextAvailableEntryId;
 
             _surfboards.Add(newBoard);

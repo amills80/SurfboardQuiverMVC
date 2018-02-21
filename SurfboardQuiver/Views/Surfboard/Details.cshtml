@@ -16,6 +16,10 @@
  
     <div class="card-footer">
         <div class="col-md-6">
+            @if(Model.ImageFileName == null)
+            {
+                Model.ImageFileName = "default_details_surfboard.jpg";
+            }
             <img src="~/images/@Model.ImageFileName" alt="@Model.DisplayText" style="margin-top:1em;" class="img-responsive img-rounded" />
         </div>
     </div>
