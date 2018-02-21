@@ -30,7 +30,7 @@ namespace SurfboardQuiver.Data
                 Rating = 4f,
                 ImageFileName = "las-olas_plover.jpg",
                 //return (Make.Name.Replace(' ', '-').ToLower() + '_' + Model.Replace(' ', '-') + ".jpg").ToLower();
-    },
+            },
             new Surfboard()
             {
                 Id = 2,
@@ -46,7 +46,7 @@ namespace SurfboardQuiver.Data
                 FinSetup = "Single",
                 Description = "Traditional noseriding log. Will treat you right on those near flat (to chest high) beach breaks.",
                 Rating = 4.2f,
-                ImageFileName = "ghetto_fuggly.jpg",
+                ImageFileName = "ghetto_fuggly-model.jpg",
             },
             new Surfboard()
             {
@@ -78,14 +78,13 @@ namespace SurfboardQuiver.Data
                 Width = 23,
                 Shape = "Longboard",
                 FinSetup = "2+1",
-				Description = "Great all around longboard for beach break conditions. Has a modest nose and tail rocker to fit into some steeper waves while still having great turning and noseriding ability. Has a center channel in the center portion of the board to provide a little extra release and allow the board to get more vertical.",
+                Description = "Great all around longboard for beach break conditions. Has a modest nose and tail rocker to fit into some steeper waves while still having great turning and noseriding ability. Has a center channel in the center portion of the board to provide a little extra release and allow the board to get more vertical.",
                 //Description = "The Knows Boogie is a modern take on a traditional log.  It has a slight step deck with a concave under the nose and a subtly kicked rocker in the tail.  The 50/50 rails help this board turn and trim in any type of surf. The knows boogie is a great all around nose rider for a wide verity of surf and is designed for beginner to advanced surfers in knee to shoulder high surf.",
                 Rating = 4.4f,
                 ImageFileName = "clay-bennett_banshee-model.jpg",
             }
         };
-
-
+        
         public Surfboard GetSurfboard(int id)
         {
             var detailBoard = new Surfboard();

@@ -41,11 +41,6 @@ namespace SurfboardQuiver.Controllers
             return View();
         }
 
-        //public ActionResult Add()
-        //{
-        //    return View();
-        //}
-
         [HttpPost]
         public ActionResult Create(Surfboard newBoard)
         {
@@ -53,9 +48,13 @@ namespace SurfboardQuiver.Controllers
             if (ModelState.IsValid)
             {
                 _surfboardRepository.AddSurfboard(newBoard);
+
+                List<Surfboard> surfboards = _surfboardRepository.GetSurfboards();
+
+                return RedirectToAction("Index");
             }
 
-            return View();
+            return View(newBoard);
         }
 
         public ActionResult Delete()
