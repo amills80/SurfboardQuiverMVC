@@ -16,20 +16,19 @@ namespace SurfboardQuiver.Models
         public float Width { get; set; }
         public string Description { get; set; }
         public float Rating { get; set; }
+        public string ImageFileName { get; set; }
+        //{
+        //    get
+        //    {
+        //        return (Make.Name.Replace(' ', '-').ToLower() + '_' + Model.Replace(' ', '-') + ".jpg").ToLower();
+        //    }
+        //}
 
         public string DisplayText
         {
             get
             {
                 return Make.Name.ToString() + " : " + Model + " : " + Length;
-            }
-        }
-
-        public string ImageFileName
-        {
-            get
-            {
-                return (Make.Name.Replace(' ', '-').ToLower() + '_' + Model.Replace(' ', '-') + ".jpg").ToLower();
             }
         }
     }

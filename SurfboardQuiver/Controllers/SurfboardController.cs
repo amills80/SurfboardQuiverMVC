@@ -19,7 +19,8 @@ namespace SurfboardQuiver.Controllers
 
         public ActionResult Index()
         {
-            var surfboards = _surfboardRepository.GetSurfboards();
+            List<Surfboard> surfboards = _surfboardRepository.GetSurfboards();
+            //var surfboards = _surfboardRepository.GetSurfboards();
 
             return View(surfboards);
         }
@@ -46,18 +47,13 @@ namespace SurfboardQuiver.Controllers
         //}
 
         [HttpPost]
-        public ActionResult Create(string brand, string model
-            , string shape, string finSetup, float? length, float? width
-            , string desc, float? rating)
+        public ActionResult Create(Surfboard newBoard)
         {
-            //ViewBag.Brand = ModelState["Brand"].Value.AttemptedValue;
-            //ViewBag.Model = ModelState["Model"].Value.AttemptedValue;
-            //ViewBag.SHape = ModelState["Shape"].Value.AttemptedValue;
-            //ViewBag.FinSetup = ModelState["FinSetup"].Value.AttemptedValue;
-            //ViewBag.Length = ModelState["Length"].Value.AttemptedValue;
-            //ViewBag.Width = ModelState["Width"].Value.AttemptedValue;
-            //ViewBag.Description = ModelState["Description"].Value.AttemptedValue;
-            //ViewBag.Rating = ModelState["Rating"].Value.AttemptedValue;
+            // TODO: during validation of board dim's: subrstring / remove the foot / inch characters in case they get submitted
+            if (ModelState.IsValid)
+            {
+                _surfboardRepository.AddSurfboard(newBoard);
+            }
 
             return View();
         }

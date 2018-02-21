@@ -1,4 +1,4 @@
-﻿    @model SurfboardQuiver.Models.Surfboard
+﻿@model SurfboardQuiver.Models.Surfboard
 
 @{
     ViewBag.Title = "Create";
@@ -19,11 +19,12 @@
                 <hr />
                 @Html.ValidationSummary(false, "", new { @class = "text-danger" })
                 <div class="form-group">
-                    <label class="control-label col-md-2">Brand</label>
+                    @*<label class="control-label col-md-2">Brand</label>*@
                     @*@Html.LabelFor(model => model.Make.Name, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    @Html.LabelFor(model => model.Make.Name, "Brand", htmlAttributes: new { @class = "control-label col-md-2"})
                     <div class="col-md-10">
                         @*@Html.EditorFor(model => model.Make.Name, new { htmlAttributes = new { @class = "form-control" } })*@
-                        @Html.TextBox("Brand", null, new { @class = "form-control" })
+                        @Html.TextBox("Make.Name", null, new { @class = "form-control" })
                     </div>
                 </div>
 
@@ -51,11 +52,30 @@
                     </div>
                 </div>
 
+                @{
+                    //Use string.indexOf to ID the character  that separates feet from inches. Parse string into both, and formulate the total float val
+                    //if (Model.Length.ToString().Contains('\'') && Model.Length != null)
+                    //{
+                    //    var convertLength = Model.Length.ToString().Remove(' ');
+                    //    var splitLength = convertLength.IndexOf('\'');
+                    //    var feetLength = convertLength.Substring(0, splitLength);
+                    //    var inchesLength = convertLength.Substring('\'');
+                    //    // TODO: refactor this validation method
+                    //    string result = feetLength + "." + (float.Parse(inchesLength)/12).ToString();
+                    //    Model.Length = float.Parse(result);
+                    //}
+                    //else
+                    //{
+                    //    var formattedLength = Model.Length;
+                    //}
+                }
+
                 <div class="form-group">
                     @Html.LabelFor(model => model.Length, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @*@Html.EditorFor(model => model.Length, new { htmlAttributes = new { @class = "form-control" } })*@
                         @Html.TextBox("Length", null, new { @class = "form-control" })
+
                     </div>
                 </div>
 
@@ -79,7 +99,14 @@
                     @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @*@Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })*@
-                        @Html.TextArea("Desc", null, 14, 20, new { @class = "form-control" })
+                        @Html.TextArea("Description", null, 14, 20, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @*//// TODO: find HTML helper (with validation for .jpg only) to implement a jpg upload section*@
+
                     </div>
                 </div>
 
