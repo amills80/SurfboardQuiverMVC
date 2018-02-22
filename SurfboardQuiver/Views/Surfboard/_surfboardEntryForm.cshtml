@@ -68,16 +68,13 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Length, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @*@Html.EditorFor(model => model.Length, new { htmlAttributes = new { @class = "form-control" } })*@
                         @Html.TextBox("Length", null, new { @class = "form-control" })
-
                     </div>
                 </div>
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.Width, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @*@Html.EditorFor(model => model.Width, new { htmlAttributes = new { @class = "form-control" } })*@
                         @Html.TextBox("Width", null, new { @class = "form-control" })
                     </div>
                 </div>
@@ -85,7 +82,6 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Rating, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @*@Html.EditorFor(model => model.Rating, new { htmlAttributes = new { @class = "form-control" } })*@
                         @Html.TextBox("Rating", null, new { @class = "form-control" })
                     </div>
                 </div>
@@ -104,7 +100,6 @@
 
                     </div>
                 </div>
-
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
                         <input type="submit" value="Create" class="btn btn-default" />
@@ -116,11 +111,9 @@
                 <div class="col-md-4 ">
                     <img src="~/images/quiver.jpg" alt="Surfboard Rack" class="img-thumbnail img-rounded float-right" />
                 </div>
-
                 <div class="col-md-4 ">
                     <img src="~/images/quiver2.jpg" alt="Surfboard Rack" class="img-thumbnail img-rounded float-right" />
                 </div>
-
                 <div class="col-md-4 ">
                     <img src="~/images/quiver3.jpg" alt="Surfboard Fins" class="img-thumbnail img-rounded float-right" />
                 </div>

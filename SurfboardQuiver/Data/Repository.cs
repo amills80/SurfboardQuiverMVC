@@ -61,7 +61,7 @@ namespace SurfboardQuiver.Data
                 Length = 6.3f,
                 Width = 22.5f,
                 Shape = BoardShape.Fish,
-                FinSetup = FinSetup.Keel,
+                FinSetup = FinSetup.Twin,
                 Description = "A loose and speedy ride.  Pairs well with soft faced waves and groundswell.",
                 Rating = 4.1f,
                 ImageFileName = "mayo_twin-keel.jpg",

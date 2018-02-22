@@ -44,6 +44,7 @@ namespace SurfboardQuiver.Controllers
         [HttpPost]
         public ActionResult Create(Surfboard newBoard)
         {
+
             // TODO: during validation of board dim's: subrstring / remove the foot / inch characters in case they get submitted
             if (ModelState.IsValid)
             {

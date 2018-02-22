@@ -20,7 +20,6 @@ namespace SurfboardQuiver.Models
         Single,
         Two_Plus_One,
         Twin,
-        Keel,
         Quad,
         Thruster,
         Bonzer,
