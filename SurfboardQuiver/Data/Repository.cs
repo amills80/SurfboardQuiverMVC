@@ -28,7 +28,7 @@ namespace SurfboardQuiver.Data
                 //Shape = "MidLength",
                 FinSetup = FinSetup.Two_Plus_One,
                 Description = "The Plover is a mid length hull designed for small, fun, summer waves.  This board has a fully rolled bottom contour which transitions to a paneled vee out of the tail.  This board is designed to turn and trim in waves from knee to head high and excels in clean, point surf.",
-                Rating = 4f,
+                Rating = 4,
                 ImageFileName = "las-olas_plover.jpg",
                 //return (Make.Name.Replace(' ', '-').ToLower() + '_' + Model.Replace(' ', '-') + ".jpg").ToLower();
             },
@@ -46,7 +46,7 @@ namespace SurfboardQuiver.Data
                 Shape = BoardShape.Longboard,
                 FinSetup = FinSetup.Single,
                 Description = "Traditional noseriding log. Will treat you right on those near flat (to chest high) beach breaks.",
-                Rating = 4.2f,
+                Rating = 4,
                 ImageFileName = "ghetto_fuggly-model.jpg",
             },
             new Surfboard()
@@ -63,7 +63,7 @@ namespace SurfboardQuiver.Data
                 Shape = BoardShape.Fish,
                 FinSetup = FinSetup.Twin,
                 Description = "A loose and speedy ride.  Pairs well with soft faced waves and groundswell.",
-                Rating = 4.1f,
+                Rating = 4,
                 ImageFileName = "mayo_twin-keel.jpg",
             },
             new Surfboard()
@@ -81,7 +81,7 @@ namespace SurfboardQuiver.Data
                 FinSetup = FinSetup.Two_Plus_One,
                 Description = "Great all around longboard for beach break conditions. Has a modest nose and tail rocker to fit into some steeper waves while still having great turning and noseriding ability. Has a center channel in the center portion of the board to provide a little extra release and allow the board to get more vertical.",
                 //Description = "The Knows Boogie is a modern take on a traditional log.  It has a slight step deck with a concave under the nose and a subtly kicked rocker in the tail.  The 50/50 rails help this board turn and trim in any type of surf. The knows boogie is a great all around nose rider for a wide verity of surf and is designed for beginner to advanced surfers in knee to shoulder high surf.",
-                Rating = 4.4f,
+                Rating = 4,
                 ImageFileName = "clay-bennett_banshee-model.jpg",
             }
         };

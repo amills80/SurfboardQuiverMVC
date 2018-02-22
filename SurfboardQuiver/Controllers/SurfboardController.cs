@@ -44,8 +44,19 @@ namespace SurfboardQuiver.Controllers
         [HttpPost]
         public ActionResult Create(Surfboard newBoard)
         {
-
             // TODO: during validation of board dim's: subrstring / remove the foot / inch characters in case they get submitted
+
+            /// if there isn't any length field validation errors, then make sure field is between 2 and 13 ft
+            if (ModelState.IsValidField("Length") && newBoard.Length <= 2 && newBoard.Length >= 13)
+            {
+                ModelState.AddModelError("Length", "Please enter a valid board length, between 2 to 13 feet.");
+            }
+            /// Make sure width field is also between 12 - 60 inches
+            if (ModelState.IsValidField("Width") && newBoard.Width <= 12 && newBoard.Width >= 60)
+            {
+                ModelState.AddModelError("Width", "Please enter a valid board width, between 12 to 60 inches.");
+            }
+
             if (ModelState.IsValid)
             {
                 _surfboardRepository.AddSurfboard(newBoard);

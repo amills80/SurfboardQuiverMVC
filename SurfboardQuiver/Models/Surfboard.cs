@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,8 +8,8 @@ namespace SurfboardQuiver.Models
 {
     public enum BoardShape
     {
-        Longboard, 
-        Midlength, 
+        Longboard,
+        Midlength,
         Fish,
         Hybrid,
         Shortboard,
@@ -29,14 +30,22 @@ namespace SurfboardQuiver.Models
     public class Surfboard
     {
         public int Id { get; set; }
+        [Required]
         public Builder Make { get; set; }
+        [Required]
         public string Model { get; set; }
+        [Required, Display(Name = "Board Shape")]
         public BoardShape Shape { get; set; }
+        [Display(Name = "Fin Setup")]
         public FinSetup FinSetup { get; set; }
+        [Display(Name = "Length (in feet)")]
         public float Length { get; set; }
+        [Display(Name = "Width (in inches)")]
         public float Width { get; set; }
+        [MaxLength(500, ErrorMessage = "This field cannot exceed 500 characters.")]
         public string Description { get; set; }
-        public float Rating { get; set; }
+        [Range(1,5, ErrorMessage = "Please enter a number between one and five.")]
+        public int Rating { get; set; }
         public string ImageFileName { get; set; }
         //{
         //    get
@@ -49,11 +58,11 @@ namespace SurfboardQuiver.Models
         {
             get
             {   // TODO: refactor this if section
-                if(Make.Name == null)
+                if (Make.Name == null)
                 {
                     Make.Name = "";
                 }
-                if(Model == null)
+                if (Model == null)
                 {
                     Model = "";
                 }
