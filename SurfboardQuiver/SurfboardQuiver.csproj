@@ -201,6 +201,7 @@
     <Content Include="Views\Shared\_SurfboardLayout.cshtml" />
     <Content Include="Views\Surfboard\Index.cshtml" />
     <Content Include="Views\Surfboard\Create.cshtml" />
+    <Content Include="Views\Surfboard\_surfboardEntryForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
