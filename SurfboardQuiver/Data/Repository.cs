@@ -110,6 +110,7 @@ namespace SurfboardQuiver.Data
             // Get the next available entry ID.
             int nextAvailableEntryId = _surfboards.Max(s => s.Id) + 1;
 
+            /// TODO: 
             /// if builder already exists, import that builder id...
             /// if not... 
             /// ... use nextAvailableId to create builderId

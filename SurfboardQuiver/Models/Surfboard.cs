@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -38,13 +39,13 @@ namespace SurfboardQuiver.Models
         public BoardShape Shape { get; set; }
         [Display(Name = "Fin Setup")]
         public FinSetup FinSetup { get; set; }
-        [Display(Name = "Length (in feet)")]
+        [Range(2, 13, ErrorMessage = "Please enter a valid board length, between 2 to 13 feet."), Display(Name = "Length (ft)")]
         public float Length { get; set; }
-        [Display(Name = "Width (in inches)")]
+        [Range(12, 60, ErrorMessage = "Please enter a valid board width, between 12 to 60 inches."), Display(Name = "Width (in)")]
         public float Width { get; set; }
-        [MaxLength(500, ErrorMessage = "This field cannot exceed 500 characters.")]
+        [MaxLength(500, ErrorMessage = "Description: This field cannot exceed 500 characters.")]
         public string Description { get; set; }
-        [Range(1,5, ErrorMessage = "Please enter a number between one and five.")]
+        [Range(1, 5, ErrorMessage = "Rating: Please enter a number between one and five.")]
         public int Rating { get; set; }
         public string ImageFileName { get; set; }
         //{
