@@ -85,7 +85,7 @@ namespace SurfboardQuiver.Data
                 ImageFileName = "clay-bennett_banshee-model.jpg",
             }
         };
-        
+
         public Surfboard GetSurfboard(int id)
         {
             var detailBoard = new Surfboard();
@@ -120,5 +120,23 @@ namespace SurfboardQuiver.Data
 
             _surfboards.Add(newBoard);
         }
+
+        public void UpdateSurfboard(Surfboard entry)
+        {
+            //throw new NotImplementedException();
+
+            //// Find the index of the entry that we need to update.
+            int entryIndex = _surfboards.FindIndex(e => e.Id == entry.Id);
+
+            if (entryIndex == -1)
+            {
+                throw new Exception(
+                    string.Format("Unable to find an entry with an ID of {0}", entry.Id));
+            }
+
+            _surfboards[entryIndex] = entry;
+
+        }
+
     }
 }

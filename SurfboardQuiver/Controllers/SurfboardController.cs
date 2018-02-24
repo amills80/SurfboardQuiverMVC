@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SurfboardQuiver.Data;
+using System.Net;
 
 namespace SurfboardQuiver.Controllers
 {
@@ -44,20 +45,13 @@ namespace SurfboardQuiver.Controllers
         [HttpPost]
         public ActionResult Create(Surfboard newBoard)
         {
-
             // TODO: during validation of board dim's: subrstring / remove the foot / inch characters in case they get submitted
 
             /// if there isn't any length field validation errors, then make sure field is between 2 and 13 ft
-            if (ModelState.IsValid && newBoard.Length <= 2 && newBoard.Length >= 13)
-            {
-                ModelState.AddModelError("Length", "");
+            ValidateEntryLength(newBoard);
 
-            }
             /// Make sure width field is also between 12 - 60 inches
-            if (ModelState.IsValid && newBoard.Width <= 12 && newBoard.Width >= 60)
-            {
-                ModelState.AddModelError("Width", "");
-            }
+            ValidateEntryWidth(newBoard);
 
             if (ModelState.IsValid)
             {
@@ -68,10 +62,58 @@ namespace SurfboardQuiver.Controllers
 
             return View(newBoard);
         }
+        
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
 
-        public ActionResult Delete()
+            Surfboard entry = _surfboardRepository.GetSurfboard((int)id);
+
+            if (entry == null)
+            {
+                return HttpNotFound();
+            }
+            
+            return View(entry);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Surfboard entry)
+        {
+            ValidateEntryLength(entry);
+            ValidateEntryWidth(entry);
+            
+            if (ModelState.IsValid)
+            {
+                _surfboardRepository.UpdateSurfboard(entry);
+                return RedirectToAction("Index");
+            }
+            return View(entry);
+        }
+
+
+        public ActionResult Delete(int? id)
         {
             return View();
+        }
+
+        private void ValidateEntryWidth(Surfboard newBoard)
+        {
+            if (ModelState.IsValid && newBoard.Width <= 12 && newBoard.Width >= 60)
+            {
+                ModelState.AddModelError("Width", "");
+            }
+        }
+
+        private void ValidateEntryLength(Surfboard newBoard)
+        {
+            if (ModelState.IsValid && newBoard.Length <= 2 && newBoard.Length >= 13)
+            {
+                ModelState.AddModelError("Length", "");
+            }
         }
 
     }

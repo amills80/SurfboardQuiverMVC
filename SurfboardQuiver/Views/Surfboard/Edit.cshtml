@@ -1,0 +1,18 @@
+﻿@model SurfboardQuiver.Models.Surfboard
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_SurfboardLayout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@Html.Partial("_surfboardEntryForm")
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
