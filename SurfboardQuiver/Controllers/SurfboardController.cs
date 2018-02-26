@@ -62,7 +62,7 @@ namespace SurfboardQuiver.Controllers
 
             return View(newBoard);
         }
-        
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -76,7 +76,7 @@ namespace SurfboardQuiver.Controllers
             {
                 return HttpNotFound();
             }
-            
+
             return View(entry);
         }
 
@@ -85,7 +85,7 @@ namespace SurfboardQuiver.Controllers
         {
             ValidateEntryLength(entry);
             ValidateEntryWidth(entry);
-            
+
             if (ModelState.IsValid)
             {
                 _surfboardRepository.UpdateSurfboard(entry);
@@ -94,10 +94,29 @@ namespace SurfboardQuiver.Controllers
             return View(entry);
         }
 
-
         public ActionResult Delete(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Surfboard entry = _surfboardRepository.GetSurfboard((int)id);
+
+           if (entry == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(entry);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            _surfboardRepository.DeleteSurfboard(id);
+
+            return RedirectToAction("Index");
         }
 
         private void ValidateEntryWidth(Surfboard newBoard)

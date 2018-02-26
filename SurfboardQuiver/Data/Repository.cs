@@ -138,5 +138,18 @@ namespace SurfboardQuiver.Data
 
         }
 
+        public void DeleteSurfboard(int id)
+        {
+            //throw new NotImplementedException();
+            int entryIndex = _surfboards.FindIndex(e => e.Id == id);
+
+            if (entryIndex == -1)
+            {
+                throw new Exception(
+                    string.Format("Unable to find an entry with an ID of {0}", id));
+            }
+
+            _surfboards.RemoveAt(entryIndex);
+        }
     }
 }
