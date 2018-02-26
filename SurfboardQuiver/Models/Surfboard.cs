@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
@@ -20,6 +21,8 @@ namespace SurfboardQuiver.Models
     public enum FinSetup
     {
         Single,
+        // TODO: create a method to extract value & description for Enums
+        //[Description("2 + 1")]
         Two_Plus_One,
         Twin,
         Quad,
@@ -54,6 +57,8 @@ namespace SurfboardQuiver.Models
         //        return (Make.Name.Replace(' ', '-').ToLower() + '_' + Model.Replace(' ', '-') + ".jpg").ToLower();
         //    }
         //}
+
+
 
         public string DisplayText
         {

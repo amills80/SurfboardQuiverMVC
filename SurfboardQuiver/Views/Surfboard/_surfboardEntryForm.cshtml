@@ -50,20 +50,6 @@
 
                 @{
                     //Use string.indexOf to ID the character  that separates feet from inches. Parse string into both, and formulate the total float val
-                    //if (Model.Length.ToString().Contains('\'') && Model.Length != null)
-                    //{
-                    //    var convertLength = Model.Length.ToString().Remove(' ');
-                    //    var splitLength = convertLength.IndexOf('\'');
-                    //    var feetLength = convertLength.Substring(0, splitLength);
-                    //    var inchesLength = convertLength.Substring('\'');
-                    //    // TODO: refactor this validation method
-                    //    string result = feetLength + "." + (float.Parse(inchesLength)/12).ToString();
-                    //    Model.Length = float.Parse(result);
-                    //}
-                    //else
-                    //{
-                    //    var formattedLength = Model.Length;
-                    //}
                 }
 
                 <div class="form-group">
@@ -83,7 +69,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Rating, htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-9">
-                        @Html.TextBox("Rating", "", new { @class = "form-control" })
+                        @Html.TextBox("Rating", null, new { @class = "form-control" })
                     </div>
                 </div>
 
@@ -91,7 +77,7 @@
                     @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-9">
                         @*@Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })*@
-                        @Html.TextArea("Description", "", 14, 20, new { @class = "form-control" })
+                        @Html.TextArea("Description", null, 14, 20, new { @class = "form-control" })
                     </div>
                 </div>
 
