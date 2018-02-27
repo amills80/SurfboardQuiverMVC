@@ -57,6 +57,7 @@ namespace SurfboardQuiver.Controllers
             {
                 _surfboardRepository.AddSurfboard(newBoard);
                 List<Surfboard> surfboards = _surfboardRepository.GetSurfboards();
+                TempData["Message"] = "Your entry was successfully added";
                 return RedirectToAction("Index");
             }
 
@@ -89,6 +90,7 @@ namespace SurfboardQuiver.Controllers
             if (ModelState.IsValid)
             {
                 _surfboardRepository.UpdateSurfboard(entry);
+                TempData["Message"] = "Your entry was successfully updated!";
                 return RedirectToAction("Index");
             }
             return View(entry);
@@ -115,7 +117,7 @@ namespace SurfboardQuiver.Controllers
         public ActionResult Delete(int id)
         {
             _surfboardRepository.DeleteSurfboard(id);
-
+            TempData["Message"] = "Your entry was successfully deleted!";
             return RedirectToAction("Index");
         }
 
