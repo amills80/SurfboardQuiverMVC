@@ -21,8 +21,7 @@ namespace SurfboardQuiver.Models
     public enum FinSetup
     {
         Single,
-        // TODO: create a method to extract value & description for Enums
-        //[Description("2 + 1")]
+        [Display(Name ="2 + 1")]
         Two_Plus_One,
         Twin,
         Quad,
